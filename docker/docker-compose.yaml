@@ -1,0 +1,24 @@
+services:
+  config:
+    image: "steeltoeoss/config-server:latest"
+    container_name: config_server
+    ports:
+      - "8060:8888"
+    volumes:
+      - ./configdata:/config
+    command: ["--spring.cloud.config.server.native.searchLocations=file:///config"]
+    environment:
+     - "SPRING_PROFILES_ACTIVE=native"
+
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  eureka:
+    image: "steeltoeoss/eureka-server:latest"
+    ports:
+      - "8761:8761"
+        
+      
