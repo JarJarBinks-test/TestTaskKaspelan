@@ -19,15 +19,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTaskKaspelan.Saga.Servi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTaskKaspelan.Saga.Repositories", "TestTaskKaspelan.Saga.Repositories\TestTaskKaspelan.Saga.Repositories.csproj", "{8A98EF74-ECFD-41A6-B26D-5F8564F466CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTaskKaspelan.Notification", "TestTaskKaspelan.Notification\TestTaskKaspelan.Notification.csproj", "{94D33F28-688C-4924-9C21-7CDEFA6CC03F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTaskKaspelan.Notification", "TestTaskKaspelan.Notification\TestTaskKaspelan.Notification.csproj", "{94D33F28-688C-4924-9C21-7CDEFA6CC03F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTaskKaspelan.Notification.Services", "TestTaskKaspelan.Notification.Services\TestTaskKaspelan.Notification.Services.csproj", "{3A81CF87-534C-4726-A6CB-24EAE95ED2C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTaskKaspelan.Notification.Services", "TestTaskKaspelan.Notification.Services\TestTaskKaspelan.Notification.Services.csproj", "{3A81CF87-534C-4726-A6CB-24EAE95ED2C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTaskKaspelan.Notification.Repositories", "TestTaskKaspelan.Notification.Repositories\TestTaskKaspelan.Notification.Repositories.csproj", "{E92084C1-F48D-4FBA-9D29-1E54F8D3C54E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTaskKaspelan.Notification.Repositories", "TestTaskKaspelan.Notification.Repositories\TestTaskKaspelan.Notification.Repositories.csproj", "{E92084C1-F48D-4FBA-9D29-1E54F8D3C54E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTaskKaspelan.Auth", "TestTaskKaspelan.Auth\TestTaskKaspelan.Auth.csproj", "{271E029C-87AF-4F79-92E5-A5F13A687E0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTaskKaspelan.Auth", "TestTaskKaspelan.Auth\TestTaskKaspelan.Auth.csproj", "{271E029C-87AF-4F79-92E5-A5F13A687E0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTaskKaspelan.Auth.Services", "TestTaskKaspelan.Auth.Services\TestTaskKaspelan.Auth.Services.csproj", "{D2DD00E1-3AC9-424D-B463-85F73CE58A70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTaskKaspelan.Auth.Services", "TestTaskKaspelan.Auth.Services\TestTaskKaspelan.Auth.Services.csproj", "{D2DD00E1-3AC9-424D-B463-85F73CE58A70}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{56A1FACD-551F-44BC-9327-C3B25D662E70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTaskKaspelan.Order.Services.UnitTests", "TestTaskKaspelan.Order.Services.UnitTests\TestTaskKaspelan.Order.Services.UnitTests.csproj", "{40E84C0D-FD7F-420A-B91E-28C1789BCEEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTaskKaspelan.Order.DataAccess.UnitTests", "TestTaskKaspelan.Order.DataAccess.UnitTests\TestTaskKaspelan.Order.DataAccess.UnitTests.csproj", "{DF600F77-6D0C-4D64-A5B3-134DEC63B4D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTaskKaspelan.Order.UnitTests", "TestTaskKaspelan.Order.UnitTests\TestTaskKaspelan.Order.UnitTests.csproj", "{95538471-308E-4CB9-9D03-3011D7093422}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,9 +95,26 @@ Global
 		{D2DD00E1-3AC9-424D-B463-85F73CE58A70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2DD00E1-3AC9-424D-B463-85F73CE58A70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2DD00E1-3AC9-424D-B463-85F73CE58A70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40E84C0D-FD7F-420A-B91E-28C1789BCEEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40E84C0D-FD7F-420A-B91E-28C1789BCEEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40E84C0D-FD7F-420A-B91E-28C1789BCEEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40E84C0D-FD7F-420A-B91E-28C1789BCEEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF600F77-6D0C-4D64-A5B3-134DEC63B4D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF600F77-6D0C-4D64-A5B3-134DEC63B4D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF600F77-6D0C-4D64-A5B3-134DEC63B4D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF600F77-6D0C-4D64-A5B3-134DEC63B4D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95538471-308E-4CB9-9D03-3011D7093422}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95538471-308E-4CB9-9D03-3011D7093422}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95538471-308E-4CB9-9D03-3011D7093422}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95538471-308E-4CB9-9D03-3011D7093422}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{40E84C0D-FD7F-420A-B91E-28C1789BCEEA} = {56A1FACD-551F-44BC-9327-C3B25D662E70}
+		{DF600F77-6D0C-4D64-A5B3-134DEC63B4D2} = {56A1FACD-551F-44BC-9327-C3B25D662E70}
+		{95538471-308E-4CB9-9D03-3011D7093422} = {56A1FACD-551F-44BC-9327-C3B25D662E70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71741A76-D1EA-4E22-84E5-D23ACB8EEC2A}

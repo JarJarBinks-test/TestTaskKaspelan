@@ -40,6 +40,11 @@ namespace TestTaskKaspelan.Order.Controllers
         [HttpGet("{orderId}")]
         public Task<ContractOrder> Get([FromRoute] Guid orderId, CancellationToken token)
         {
+            if (orderId == Guid.Empty)
+            {
+                throw new ArgumentException(nameof(orderId));
+            }
+
             return _orderService.GetAsync(orderId, token);
         }
 

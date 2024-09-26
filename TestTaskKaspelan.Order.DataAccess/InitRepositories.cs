@@ -20,7 +20,7 @@ namespace TestTaskKaspelan.Order.DataAccess
         public static void AddRepositories(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<OrderContext>((ob) => {
-                var connectionString = configuration.GetConnectionString("spring.order.mssql.connectionstring");
+                var connectionString = configuration.GetConnectionString("order.mssql.connectionstring");
                 if (!string.IsNullOrWhiteSpace(connectionString))
                 {
                     ob.UseSqlServer(connectionString);

@@ -78,7 +78,7 @@ namespace TestTaskKaspelan.Order.Services.Services
             var resultOrder = new ContractOrder()
             {
                 Id = result.Id,
-                Details = order.Details,
+                Details = result.Details,
             };
 
             // TODO: I think it should be in SAGA but in requirement - here.
@@ -87,6 +87,12 @@ namespace TestTaskKaspelan.Order.Services.Services
             return resultOrder;
         }
 
+        /// <summary>
+        /// Sends the notification about new order.
+        /// </summary>
+        /// <param name="order">The order.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns></returns>
         Task SendNotificationAboutNewOrder(ContractOrder order, CancellationToken cancellationToken)
         {
             var payload = new Notification<NewOrderNotificationData>(new NewOrderNotificationData(order.Id), Common.Enums.NotificationType.Email);

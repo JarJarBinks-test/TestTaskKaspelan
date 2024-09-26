@@ -28,6 +28,11 @@ namespace TestTaskKaspelan.Order.DataAccess.Repositories
         /// <inheritdoc />
         public async Task<DbOrder> GetAsync(Guid orderId, CancellationToken token)
         {
+            if (orderId == Guid.Empty)
+            {
+                throw new ArgumentException(nameof(orderId));
+            }
+
             return await _context.Orders.FindAsync([orderId], token);
         }
 
