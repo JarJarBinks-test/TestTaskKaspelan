@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
-using TestTaskKaspelan.Order.Services.Exceptions;
 
-namespace TestTaskKaspelan.Order.Filters
+namespace TestTaskKaspelan.Auth.Filters
 {
     /// <summary>
     /// Application exception filter.
@@ -27,13 +26,14 @@ namespace TestTaskKaspelan.Order.Filters
         public void OnException(ExceptionContext context)
         {
             // TODO: For additional logic.
-            if (context.Exception is NotFoundException)
+            if (context.Exception is ArgumentException)
             {
-                context.Result = new NotFoundResult();
+                
+                context.Result = new BadRequestResult();
             }
             else
             {
-                context.Result = new BadRequestResult();
+                context.Result = new UnauthorizedResult();
             }
         }
     }

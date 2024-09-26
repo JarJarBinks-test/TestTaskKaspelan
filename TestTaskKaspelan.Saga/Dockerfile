@@ -9,7 +9,9 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["TestTaskKaspelan.Saga/TestTaskKaspelan.Saga.csproj", "TestTaskKaspelan.Saga/"]
+COPY ["./TestTaskKaspelan.Saga/TestTaskKaspelan.Saga.csproj", "TestTaskKaspelan.Saga/"]
+COPY ["./TestTaskKaspelan.Saga.Services/TestTaskKaspelan.Saga.Services.csproj", "TestTaskKaspelan.Saga.Services/"]
+COPY ["./TestTaskKaspelan.Common/TestTaskKaspelan.Common.csproj", "TestTaskKaspelan.Common/"]
 RUN dotnet restore "./TestTaskKaspelan.Saga/TestTaskKaspelan.Saga.csproj"
 COPY . .
 WORKDIR "/src/TestTaskKaspelan.Saga"

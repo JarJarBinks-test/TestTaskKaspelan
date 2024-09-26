@@ -6,6 +6,7 @@ using System.Text.Json;
 using TestTaskKaspelan.Common.Constants;
 using TestTaskKaspelan.Common.Contracts;
 using TestTaskKaspelan.Order.DataAccess.Interfaces;
+using TestTaskKaspelan.Order.Services.Exceptions;
 using TestTaskKaspelan.Order.Services.Interfaces;
 using ContractOrder = TestTaskKaspelan.Common.Contracts.Order;
 using DbOrder = TestTaskKaspelan.Order.DataAccess.Entities.Order;
@@ -46,7 +47,7 @@ namespace TestTaskKaspelan.Order.Services.Services
             var result = await _repository.GetAsync(orderId, token);
             if (result == null)
             {
-                throw new Exception($"Order# '{orderId}' not found.");
+                throw new NotFoundException($"Order# '{orderId}' not found.");
             }
 
             // TODO: Should be rewrited to AutoMapper.

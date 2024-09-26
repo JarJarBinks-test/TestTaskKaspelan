@@ -9,10 +9,11 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["TestTaskKaspelan.Order.csproj", "."]
-RUN dotnet restore "./TestTaskKaspelan.Order.csproj"
+COPY ["./TestTaskKaspelan.Order/TestTaskKaspelan.Order.csproj", "TestTaskKaspelan.Order/"]
+COPY ["./TestTaskKaspelan.Order.Services/TestTaskKaspelan.Order.Services.csproj", "TestTaskKaspelan.Order.Services/"]
+RUN dotnet restore "./TestTaskKaspelan.Order/TestTaskKaspelan.Order.csproj"
 COPY . .
-WORKDIR "/src/."
+WORKDIR "/src/TestTaskKaspelan.Order"
 RUN dotnet build "./TestTaskKaspelan.Order.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish

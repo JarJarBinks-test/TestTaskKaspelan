@@ -1,5 +1,6 @@
 using Steeltoe.Discovery.Client;
 using Steeltoe.Extensions.Configuration.ConfigServer;
+using TestTaskKaspelan.Auth.Filters;
 using TestTaskKaspelan.Auth.Services;
 using TestTaskKaspelan.Common.Contracts;
 
@@ -22,7 +23,10 @@ namespace TestTaskKaspelan.Auth
             // Configure auth options from the configuration
             builder.Services.Configure<AuthOptions>(builder.Configuration.GetSection(AuthOptions.PREFIX));
 
-            builder.Services.AddControllers();
+
+            builder.Services.AddControllers((options) => {
+                options.Filters.Add<AppExceptionFilter>();
+            });
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
