@@ -2,8 +2,6 @@ services:
   config:
     image: "steeltoeoss/config-server:latest"
     container_name: config
-    ports:
-      - "8060:8888"
     volumes:
       - ./configdata:/config
     command: ["--spring.cloud.config.server.native.searchLocations=file:///config"]
@@ -20,7 +18,6 @@ services:
     image: "rabbitmq:3-management"
     container_name: rabbitmq
     ports:
-      - "5672:5672"
       - "15672:15672"
 
   eureka:
@@ -42,9 +39,6 @@ services:
     container_name: auth
     environment:
       - ASPNETCORE_ENVIRONMENT=Docker
-    ports:
-      - "8040:8080"
-      - "8041:8081"
     depends_on:
       config:
         condition: service_healthy
@@ -58,9 +52,6 @@ services:
     container_name: saga
     environment:
       - ASPNETCORE_ENVIRONMENT=Docker
-    ports:
-      - "8070:8080"
-      - "8071:8081"
     depends_on:
       eureka:
         condition: service_healthy
@@ -87,9 +78,6 @@ services:
     container_name: order
     environment:
       - ASPNETCORE_ENVIRONMENT=Docker
-    ports:
-      - "8090:8080"
-      - "8091:8081"
     depends_on:
       saga:
         condition: service_started

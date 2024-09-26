@@ -29,11 +29,11 @@ namespace TestTaskKaspelan.Auth.Filters
             if (context.Exception is ArgumentException)
             {
                 
-                context.Result = new BadRequestResult();
+                context.Result = new UnauthorizedResult();
             }
             else
             {
-                context.Result = new UnauthorizedResult();
+                context.Result = new BadRequestResult();
             }
         }
     }
