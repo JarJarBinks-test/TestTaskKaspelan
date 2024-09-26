@@ -3,7 +3,7 @@ Test task for Kaspelan. Microservices (Gateway, Saga, External config, ServicesD
 For testing used Docker-Desktop: Current version: 4.33.1 (161083)
 
 For start open docker folder and enter command
-docker-compose up
+docker-compose up and wait when fully started (+ ~20 seconds, i will investigate long start in future).
 
 Docker has 4 open ports:
 http://localhost:8761/ - for Eureka dashboard.
